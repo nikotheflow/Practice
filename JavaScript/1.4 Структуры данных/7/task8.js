@@ -1,13 +1,13 @@
 var n = 100, p = 2, sum = 0;
 var numbers = [], dataArray = [], dataArrayP = [];
 
-for (i = 2; i <= n; i++) {
+for (var i = 2; i <= n; i++) {
   numbers.push(i);
 }
 
 while (p < Math.sqrt(n)) {
 	dataArrayP.push(p);
-	for (i = 0; i < numbers.length; i++) {
+	for (var i = 0; i < numbers.length; i++) {
 	  if (numbers[i] % p != 0) {
 		dataArray.push(numbers[i]);
 	  }	
@@ -19,13 +19,17 @@ while (p < Math.sqrt(n)) {
 	clearArray(dataArray);
 }
 
-dataArray.push(dataArrayP);
-dataArray.push(numbers);
+cloneArray(dataArrayP, dataArray);
 
-alert(dataArray);
+for (var i = 0; i < numbers.length; i++) {
+  dataArray.push(numbers[i]);
+}
 
+for (var i = 0; i < dataArray.length; i++) {
+  sum += dataArray[i];
+}
 
-
+alert(sum);
 	
 function cloneArray(arr1, arr2) {
   for (var i = 0; i < arr1.length; i++) {
