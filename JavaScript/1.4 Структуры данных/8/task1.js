@@ -1,5 +1,5 @@
 var obj = {
-  className: 'open menu';
+  className: 'open menu'
 }
 
 
